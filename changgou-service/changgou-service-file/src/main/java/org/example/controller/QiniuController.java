@@ -3,17 +3,15 @@ package org.example.controller;
 import org.example.service.QiniuImageService;
 import org.example.util.QiniuUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.FileInputStream;
 import java.io.IOException;
 
 @RestController
-@RequestMapping("/qiniu")
+@RequestMapping(value = "/upload")
+@CrossOrigin
 public class QiniuController {
     @Autowired
     QiniuImageService qiniuImageService;
@@ -32,9 +30,7 @@ public class QiniuController {
 
             FileInputStream inputStream = (FileInputStream) file.getInputStream();
 
-            String path = qiniuImageService.uploadQiniuImage(inputStream, imgName);
-            System.out.print("七牛云返回的图片链接:" + path);
-            return path;
+            return qiniuImageService.uploadQiniuImage(inputStream, imgName);
         }
         return "上传失败";
     }

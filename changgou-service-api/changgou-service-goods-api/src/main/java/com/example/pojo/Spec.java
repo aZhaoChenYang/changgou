@@ -1,37 +1,33 @@
-package com.example.goods.pojo;
-
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-
+package com.example.pojo;
 import javax.persistence.*;
 import java.io.Serializable;
-
+import java.lang.String;
+import java.lang.Integer;
 /****
- * @Author:admin
- * @Description:Para构建
+ * @Author:shenkunlin
+ * @Description:Spec构建
  * @Date 2019/6/14 19:13
  *****/
-@ApiModel(description = "Para",value = "Para")
-@Table(name="tb_para")
-public class Para implements Serializable{
+@Table(name="tb_spec")
+public class Spec implements Serializable{
 
-	@ApiModelProperty(value = "id",required = false)
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-	private Integer id;//id
-	@ApiModelProperty(value = "名称",required = false)
+	private Integer id;//ID
+
     @Column(name = "name")
 	private String name;//名称
-	@ApiModelProperty(value = "选项",required = false)
+
     @Column(name = "options")
-	private String options;//选项
-	@ApiModelProperty(value = "排序",required = false)
+	private String options;//规格选项
+
     @Column(name = "seq")
 	private Integer seq;//排序
-	@ApiModelProperty(value = "模板ID",required = false)
+
     @Column(name = "template_id")
 	private Integer templateId;//模板ID
+
 
 
 	//get方法

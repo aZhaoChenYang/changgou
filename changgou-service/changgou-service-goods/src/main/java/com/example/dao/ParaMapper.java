@@ -1,11 +1,11 @@
 package com.example.dao;
-import com.example.pojo.Brand;
+import com.example.pojo.Para;
 import tk.mybatis.mapper.common.Mapper;
 
 /****
  * @Author:shenkunlin
- * @Description:Brand的Dao
+ * @Description:Para的Dao
  * @Date 2019/6/14 0:12
  *****/
-public interface BrandMapper extends Mapper<Brand> {
+public interface ParaMapper extends Mapper<Para> {
 }
