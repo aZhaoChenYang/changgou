@@ -1,0 +1,26 @@
+spring:
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+  application:
+    name: file
+  cloud:
+    nacos:
+      server-addr: 10.23.26.33:8848
+
+feign:
+  hystrix:
+    enabled: true
+
+server:
+  port: 18082
+
+# 七牛云存储
+oss:
+  qiniu:
+    domain: http://changgou.ymeng.xyz # 访问域名(默认使用七牛云测试域名)
+    accessKey: fiZZqMMY_sOGztSTBpcVleK8rr7HNTq7iTDL6-Sn # 公钥
+    secretKey: TcuiYaZCh5pOaIxzJZ7CSiv43TT_EKeXiPnB6Nn8 # 私钥
+    bucketName: changgou-mine  #存储空间名称
